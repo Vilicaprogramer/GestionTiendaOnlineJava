@@ -1,11 +1,10 @@
-package GestionNegocio2;
+package GestionTiendaOnlineJava;
 
-import GestionNegocio2.FuncionesMenu;
-import GestionNegocio2.Tienda;
+import  GestionTiendaOnlineJava.FuncionesMenu;
+import GestionTiendaOnlineJava.Tienda;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {

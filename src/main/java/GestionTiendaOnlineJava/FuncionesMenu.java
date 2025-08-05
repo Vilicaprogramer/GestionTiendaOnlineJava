@@ -1,6 +1,14 @@
-package GestionNegocio2;
+package GestionTiendaOnlineJava;
+
+/**
+ * Clase utilitaria para mostrar los distintos menús de la aplicación.
+ * Contiene métodos estáticos que imprimen los menús en consola.
+ */
 
 public class FuncionesMenu {
+    /**
+     * Muestra el menú principal.
+     */
     public static void menuPrincipal() {
         System.out.println("===MENÚ PRINCIPAL===");
         System.out.println("1. Gestión de clientes");
@@ -11,6 +19,9 @@ public class FuncionesMenu {
         System.out.println("¿Qué quieres hacer? \n Escribe el número: ");
     }
 
+    /**
+     * Muestra el menú de gestión de clientes.
+     */
     public static void menuGestClientes() {
         System.out.println("===GESTIÓN DE CLIENTES===");
         System.out.println("1. Alta de cliente");
@@ -21,6 +32,9 @@ public class FuncionesMenu {
         System.out.println("¿Qué quieres hacer? \n Escribe el número: ");
     }
 
+    /**
+     * Muestra el menú de gestión de productos.
+     */
     public static void menuGestProductos() {
         System.out.println("===GESTIÓN DE PRODUCTOS===");
         System.out.println("1. Alta de producto");
@@ -32,6 +46,9 @@ public class FuncionesMenu {
         System.out.println("¿Qué quieres hacer? \n Escribe el número: ");
     }
 
+    /**
+     * Muestra el menú para gestionar ventas.
+     */
     public static void menuGestVentas() {
         System.out.println("===GESTIÓN DE VENTAS===");
         System.out.println("1. Crear una nueva venta");
@@ -39,6 +56,9 @@ public class FuncionesMenu {
         System.out.println("¿Qué quieres hacer? \n Escribe el número: ");
     }
 
+    /**
+     * Muestra el menú para consultar ventas realizadas.
+     */
     public static void menuMostrarVentas() {
         System.out.println("===MOSTRAR VENTAS===");
         System.out.println("1. Mostrar todas las ventas realizadas");

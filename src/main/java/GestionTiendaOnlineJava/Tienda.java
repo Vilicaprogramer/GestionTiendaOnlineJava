@@ -1,12 +1,21 @@
-package GestionNegocio2;
+package GestionTiendaOnlineJava;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+/**
+ * Clase principal que representa una tienda online.
+ * Permite gestionar clientes, productos y ventas.
+ */
 
 public class Tienda {
     private ArrayList<Cliente> dbClientes;
     private ArrayList<Producto> dbProductos;
     private ArrayList<Venta> dbVentas;
+
+    /**
+     * Constructor de la clase Tienda. Inicializa las bases de datos de clientes, productos y ventas.
+     */
 
     public Tienda(){
         this.dbClientes = new ArrayList<>();
@@ -14,23 +23,52 @@ public class Tienda {
         this.dbVentas = new ArrayList<>();
     }
 
+    /**
+     * Añade un cliente a la base de datos.
+     * @param c Cliente a añadir
+     */
+
     public void addDbClientes(Cliente c){
         this.dbClientes.add(c);
     }
 
+    /**
+     * Añade un producto a la base de datos.
+     * @param p Producto a añadir
+     */
+
     public void addDbProductos(Producto p){
         this.dbProductos.add(p);
     }
+
+    /**
+     * Añade una venta a la base de datos.
+     * @param v Venta a añadir
+     */
 
     public void addDbVentas(Venta v){
         this.dbVentas.add(v);
     }
 
     // Funciones de Cliente en Tienda
+
+    /**
+     * Da de alta un nuevo cliente con sus datos personales.
+     * @param nombre Nombre del cliente
+     * @param dni DNI del cliente
+     * @param tlf Teléfono del cliente
+     * @param mail Correo electrónico del cliente
+     */
+
     public void altaCliente(String nombre, String dni, String tlf, String mail) {
         Cliente cl = new Cliente(nombre, dni, tlf, mail);
         this.dbClientes.add(cl);
     }
+
+    /**
+     * Busca y muestra un cliente por su DNI.
+     * @param dni DNI del cliente
+     */
 
     public void getClienteByDni(String dni) {
         boolean clienteEncontrado = false;
@@ -46,6 +84,11 @@ public class Tienda {
             System.out.println("El DNI proporcionado no está en la BBDD");
         }
     }
+
+    /**
+     * Elimina un cliente de la base de datos según su DNI.
+     * @param dni DNI del cliente a eliminar
+     */
 
     public void darBajaCliente(String dni) {
         boolean clienteEncontrado = false;
@@ -64,12 +107,20 @@ public class Tienda {
         }
     }
 
+    /**
+     * Muestra todos los clientes registrados.
+     */
 
     public void listarClientes(){
         for (Cliente c: this.dbClientes){
             System.out.println(c.getCliente());
         }
     }
+
+    /**
+     * Permite modificar los datos de un cliente mediante un menú interactivo.
+     * @param dni DNI del cliente a modificar
+     */
 
     public void modificarCliente(String dni) {
         Scanner sc = new Scanner(System.in);
@@ -119,10 +170,23 @@ public class Tienda {
     }
 
     // Funciones de Productos en Tienda
+
+    /**
+     * Da de alta un producto en la tienda.
+     * @param tipo Tipo de producto
+     * @param modelo Modelo del producto
+     * @param precio Precio del producto
+     */
+
     public void altaProducto(String tipo, String modelo, double precio) {
         Producto pd = new Producto(tipo, modelo, precio);
         this.dbProductos.add(pd);
     }
+
+    /**
+     * Elimina un producto según su modelo.
+     * @param modelo Modelo del producto a eliminar
+     */
 
     public void bajaProducto(String modelo) {
         boolean productoEncontrado = false;
@@ -138,6 +202,11 @@ public class Tienda {
             System.out.println("No existe ningún producto con ese modelo");
         }
     }
+
+    /**
+     * Permite modificar los datos de un producto existente.
+     * @param modelo Modelo del producto a modificar
+     */
 
     public void modificarProducto(String modelo) {
         Scanner sc = new Scanner(System.in);
@@ -174,11 +243,17 @@ public class Tienda {
         }
     }
 
+
     public void listarProductos(){
         for (Producto p: this.dbProductos){
             System.out.println(p.getProducto());
         }
     }
+
+    /**
+     * Busca y muestra un producto por su modelo.
+     * @param nombre Modelo del producto
+     */
 
     public void getProductoByNombre(String nombre){
         boolean productoEncontrado = false;
@@ -197,6 +272,12 @@ public class Tienda {
 
 
     //Funciones de Gestión de ventas
+
+    /**
+     * Muestra la lista de clientes y permite al usuario seleccionar uno por nombre.
+     * @return Cliente seleccionado o null si no se encuentra
+     */
+
     public Cliente seleccionCliente(){
         Scanner sc = new Scanner(System.in);
         String cliente;
@@ -212,6 +293,11 @@ public class Tienda {
         }
         return cl;
     }
+
+    /**
+     * Muestra la lista de productos y permite seleccionar uno por modelo.
+     * @return Producto seleccionado o null si no se encuentra
+     */
 
     public Producto seleccionProducto() {
         Scanner sc = new Scanner(System.in);
@@ -238,7 +324,10 @@ public class Tienda {
         }
     }
 
-
+    /**
+     * Añade una nueva venta a la base de datos.
+     * @param v Venta a registrar
+     */
 
     public void nuevaVenta(Venta v){
         this.dbVentas.add(v);
@@ -246,11 +335,19 @@ public class Tienda {
 
     //Funciones de Mostrar ventas
 
+    /**
+     * Muestra todas las ventas realizadas en la tienda.
+     */
+
     public void mostrarTotalVentas(){
         for (Venta v: this.dbVentas){
             v.getVentas();
         }
     }
+
+    /**
+     * Solicita el nombre de un cliente e imprime todas sus ventas.
+     */
 
     public void mostrarVentasPorCliente(){
         Scanner sc = new Scanner(System.in);
@@ -263,6 +360,10 @@ public class Tienda {
             }
         }
     }
+
+    /**
+     * Solicita el nombre de un cliente y muestra el importe total de sus compras.
+     */
 
     public void mostrarImporteTotalPorCLiente() {
         Scanner sc = new Scanner(System.in);
