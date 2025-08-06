@@ -104,7 +104,7 @@ Los archivos se almacenarán en la carpeta `/docs`.
 - `main` → versión estable del proyecto
 - `dev` → rama de desarrollo activo
 - `feature/<nombre>` → ramas para nuevas funcionalidades
-- 
+
 ---
 
 ## 👨‍💻 Autoría
